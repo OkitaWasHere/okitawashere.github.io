@@ -65,12 +65,12 @@ body {
 }
 
 .navbar a:hover {
-  color: var(--cg-blue);
+  color: #a00000;
   text-decoration: underline;
 }
 
 .navbar a:active {
-  color: var(--cg-blue);
+  color: #a00000;
 }
 
 .logo a {
@@ -153,7 +153,7 @@ main {
 }
 
 .project-details a:hover {
-  color: var(--cg-blue);
+  color: #a00000;
   text-decoration: underline;
 }
 
@@ -216,7 +216,7 @@ main {
 }
 
 .button:hover {
-  background-color: var(--cg-blue);
+  background-color: #a00000;
 }
 
 .resume h2 {
@@ -248,6 +248,124 @@ textarea {
 form {
   width: 500px;
   margin: 0 auto;
+}
+
+/* Index */
+#index {
+  background-color: #a00000;
+  padding-left: 30%;
+  padding-right: 30%;
+  box-sizing: border-box;
+}
+
+/* Resume */
+#resume {
+  background-color: #fff;
+  margin: 80px auto; /* adds top/bottom space and centers horizontally */
+  padding: 40px 10%; /* optional: adds internal space for readability */
+  max-width: 1200px; /* keeps content from stretching too wide */
+  border-radius: 8px; /* optional: rounded corners */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* optional: subtle depth effect */
+}
+
+
+/* Contact Form */
+#portfolio {
+  background-color: #FFF; 
+}
+
+/* Blog */
+#blog {
+  background-color: #FFF; /
+}
+
+/* Contact Form */
+#contact {
+  background-color: #860000;
+  padding-left: 30%;
+  padding-right: 30%;
+  text-align: center;
+  
+}
+
+#contact h5 {
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+}
+
+#contact h2 {
+  color: #fff;
+  font-size: 36px;
+  line-height: 1.5;
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+
+#contact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  background-color: #fff;
+  padding: 32px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+/* Form Elements */
+#contact-form label {
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: vertical;
+}
+
+#contact-form input[type="submit"] {
+  background-color: #860000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#contact-form input[type="submit"]:hover {
+  background-color: #a00000;
+}
+
+/* Responsive Layouts */
+@media (min-width: 768px) {
+  #contact-form {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #contact-form {
+    padding-left: 128px;
+    padding-right: 128px;
+  }
+
+
 }
 
 /* CSS for footer */
