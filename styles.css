@@ -1,383 +1,332 @@
 :root {
-  /* variables */
+  /* Core color variables */
   --cg-black: rgb(30, 32, 32);
-  --cg-blue: rgb(36, 94, 255);
+  --cg-red: #a00000;
   --cg-grey: rgb(243, 243, 243);
   --cg-white: rgb(255, 255, 255);
 }
 
 html {
   height: 100%;
-  scroll-behavior: smooth; /* enables smooth scrolling when clicking nav links */
+  scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 
 body {
   background: var(--cg-grey);
-  position: relative;
-  min-height: 100vh;
-  padding: 0;
+  color: var(--cg-black);
+  font-family: "Montserrat", monospace;
   margin: 0;
-  font-family: monospace;
+  padding: 0;
+  line-height: 1.6;
 }
 
-/* CSS for navigation */
+/* --- Layout Container for Responsive Margins --- */
+main, header, section, footer {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 5vw; /* Dynamically scales with screen width */
+  box-sizing: border-box;
+}
 
+/* --- NAVBAR --- */
 .navbar {
-  position: -webkit-sticky;
+  width: 100%;
+  left: 0;
+  right: 0;
+  padding: 12px 0;
+  background-color: var(--cg-black);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   position: sticky;
   top: 0;
-  width: 100%;
-  height: 7%;
-  z-index: 10;
+  z-index: 999;
+}
 
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5vw; 
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  text-align: center;
-
-  background-color: var(--cg-black);
-  color: var(--cg-white);
-  padding: 0px 0px;
-
-  /* Debug border */
-  /* border: solid red; */
+  justify-content: space-between;
 }
 
 .nav-list {
   display: flex;
-  flex-direction: row;
-  position: relative;
-  right: 30px;
   list-style: none;
-
-  /* Debug border */
-  /* border: solid blue; */
+  gap: 16px;
 }
 
 .navbar a {
   color: var(--cg-white);
-  font-weight: bold;
-  margin: 0 12px;
+  font-weight: 600;
   text-decoration: none;
-  letter-spacing: 2px;
-
-  font-family: monospace;
+  letter-spacing: 1.5px;
+  transition: color 0.3s ease;
 }
 
-.navbar a:hover {
-  color: #a00000;
+.navbar a:hover,
+.navbar a:active {
+  color: var(--cg-red);
   text-decoration: underline;
 }
 
-.navbar a:active {
-  color: #a00000;
-}
-
-.logo a {
-  font-family: Georgia;
-}
-
-.logo a:hover {
-  text-decoration: None;
-}
-
-main {
-  padding: 0 20px 40px 20px;
+/* --- ABOUT SECTION --- */
+.about {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 40px 0;
+}
+
+.name {
+  margin: 0;
+  line-height: 1.05;
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.title {
+  margin: 10px 0 15px; /* para : top, right, left, bottom */
+  font-size: 18px;
+  color: var(--cg-red);
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+.about-inner{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   align-items: center;
 }
 
 .page-title {
+  flex-basis: 100%;
+  text-align: left;
+}
+
+.about-image{
+  flex: 0 0 260px;
   display: flex;
   justify-content: center;
-  font-size: 40px;
-  font-family: Georgia;
 }
 
-/* CSS for portfolio grid */
-
-.project {
-  display: flex;
-  flex-direction: row;
-  max-width: 100%;
-  margin: 1em 0 2em 0;
-
-  /* Debug border */
-  /* border: 2px solid blue; */
-}
-
-.item-link {
-  width: 70%;
-
-  /* Debug border */
-  /* border: 2px solid red; */
-}
-
-.project-image {
-  object-fit: cover;
+.about-image img{
   width: 100%;
-  height: 500px;
-  flex-basis: 50px;
-  flex-grow: 2;
-
-  /* Debug border */
-  /* border: 2px solid black; */
-}
-
-.project-details {
-  display: flex;
-  background-color: var(--cg-white);
-  width: 30%;
-  height: 500px;
-  flex-shrink: 1;
-  padding: 0 20px;
-  margin: 0px;
-  line-height: 1.5;
-  overflow: scroll;
-
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-
-  /* Debug border */
-  /* border: 2px solid green; */
-}
-
-.project-details a {
-  color: var(--cg-black);
-  text-decoration: none;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.project-details a:hover {
-  color: #a00000;
-  text-decoration: underline;
-}
-
-.project-details {
-  font-weight: lighter;
-}
-
-.project-name {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-/* CSS for home page */
-
-.about {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-}
-
-.about-image img {
-  max-width: 300px;
-  border-radius: 3px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+  max-width: 260px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 .about-text {
-  flex: 1;
-  margin-left: 20px;
+  flex: 1 1 320px;
+  min-width: 250px;
+  text-align: center;
+}
+
+.about-text h5 {
+  margin: 0px;
+  text-align: center;
 }
 
 .about-text h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.about-text p {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-/* CSS for resume page */
-
-.button {
-  background-color: var(--cg-black);
-  border: none;
-  color: var(--cg-white);
-
-  font-family: monospace;
-
-  padding: 5px 7px;
+  color: var(--cg-red);
+  font-size: 28px;
+  margin-bottom: 12px;
   text-align: center;
-
-  border-radius: 2px;
 }
 
-.button:hover {
-  background-color: #a00000;
+@media (max-width: 720px) {
+  .about-inner { justify-content: center; }
+  .page-title { text-align: center; }
+  .about-image { order: 0; }
+  .about-text { order: 1; text-align: center; }
 }
 
-.resume h2 {
-  font-family: Georgia;
+/* --- HEADINGS --- */
+h1, h2, h3, h4, h5 {
+  font-family: "Playfair Display", serif;
+  margin-top: 0;
+  color: var(--cg-black);
 }
 
-/* CSS for contact form */
-
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-family: Georgia;
-  font-weight: bold;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  resize: none;
-}
-
-/* Add some spacing to the form */
-form {
-  width: 500px;
-  margin: 0 auto;
-}
-
-/* Index */
-#index {
-  background-color: #a00000;
-  padding-left: 30%;
-  padding-right: 30%;
-  box-sizing: border-box;
-}
-
-/* Resume */
+/* --- RESUME SECTION --- */
 #resume {
-  background-color: #fff;
-  margin: 80px auto; /* adds top/bottom space and centers horizontally */
-  padding: 40px 10%; /* optional: adds internal space for readability */
-  max-width: 1200px; /* keeps content from stretching too wide */
-  border-radius: 8px; /* optional: rounded corners */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* optional: subtle depth effect */
+  background-color: var(--cg-white);
+  padding: 60px 5vw;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-top: 60px;
 }
 
-
-/* Contact Form */
-#portfolio {
-  background-color: #FFF; 
+.section-title {
+  color: var(--cg-red);
+  border-bottom: 2px solid var(--cg-red);
+  padding-bottom: 8px;
+  margin-bottom: 24px;
 }
 
-/* Blog */
-#blog {
-  background-color: #FFF; /
-}
-
-/* Contact Form */
-#contact {
-  background-color: #860000;
-  padding-left: 30%;
-  padding-right: 30%;
-  text-align: center;
-  
-}
-
-#contact h5 {
+.download-resume {
+  display: inline-block;
+  background: var(--cg-red);
   color: #fff;
-  font-size: 20px;
-  text-transform: uppercase;
-  margin-bottom: 0px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 28px auto;
+}
+
+/* --- LINKS --- */
+a {
+  color: var(--cg-red);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- BUTTON STYLES --- */
+.button,
+#contact-form input[type="submit"] {
+  background-color: var(--cg-red);
+  color: var(--cg-white);
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button:hover,
+#contact-form input[type="submit"]:hover {
+  background-color: #800000;
+}
+
+/* --- CONTACT SECTION --- */
+#contact {
+  background-color: var(--cg-red);
+  color: var(--cg-white);
+  text-align: center;
+  padding: 80px 5vw;
+  border-radius: 8px;
+  margin-top: 60px;
 }
 
 #contact h2 {
-  color: #fff;
-  font-size: 36px;
-  line-height: 1.5;
-  margin-top: 0px;
-  margin-bottom: 40px;
+  color: var(--cg-white);
 }
 
 #contact-form {
-  display: grid;
-  grid-template-columns: 1fr;
-
-  background-color: #fff;
+  background-color: var(--cg-white);
+  color: var(--cg-black);
   padding: 32px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   max-width: 600px;
-  width: 100%;
-  margin: 0 auto;
-  margin-bottom: 50px;
+  margin: 0 auto 40px;
 }
 
-/* Form Elements */
-#contact-form label {
-  text-align: left;
-  font-weight: bold;
-  color: #333;
-}
-
-#contact-form input[type="text"],
-#contact-form input[type="email"],
+#contact-form input,
 #contact-form textarea {
   width: 100%;
-  padding: 12px;
-  border-radius: 8px;
   border: 1px solid #ccc;
-  font-size: 16px;
-  resize: vertical;
-}
-
-#contact-form input[type="submit"] {
-  background-color: #860000;
-  color: #fff;
-  border: none;
   border-radius: 8px;
-  padding: 12px 24px;
+  padding: 12px;
+  margin-bottom: 16px;
   font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-#contact-form input[type="submit"]:hover {
-  background-color: #a00000;
+/* --- BLOG SECTION --- */
+#blog {
+  background-color: var(--cg-white);
+  padding: 60px 5vw;
+  border-radius: 12px;
+  margin-top: 60px;
 }
 
-/* Responsive Layouts */
-@media (min-width: 768px) {
-  #contact-form {
-    padding-left: 64px;
-    padding-right: 64px;
-  }
+.blog h5{
+  margin: 0px;
+  text-align: center;
 }
 
-@media (min-width: 1024px) {
-  #contact-form {
-    padding-left: 128px;
-    padding-right: 128px;
-  }
-
-
+.blog h2{
+  margin: 0px;
+  text-align: center;
 }
 
-/* CSS for footer */
+/* spacing between blog cards */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;              /* spacing both horizontally and vertically */
+}
 
+/* card spacing fallback if not grid-based */
+.blog-post {
+  margin-bottom: 28px;    /* extra vertical gap between stacked posts */
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--cg-white);
+  box-shadow: 0 6px 20px rgba(20,20,20,0.06);
+}
+
+/* round the images inside posts */
+.blog-post img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  display: block;
+}
+
+
+/* --- FOOTER --- */
 .footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  left: 0;
+  right: 0;
   background-color: var(--cg-black);
   color: var(--cg-white);
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
+  text-align: center;
+  padding: 18px 0;
+  font-size: 14px;
+  margin-top: 60px;
+  border-top: 2px solid var(--cg-red);
+  border-top: 3px solid var(--cg-red);
+  box-sizing: border-box;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5vw;
+  text-align: center;
+}
+
+/* --- RESPONSIVENESS --- */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  main, section {
+    padding: 0 4vw;
+  }
 }

@@ -2,44 +2,51 @@
 <html>
     <head>
         <title>Valerie's Personal Website</title>
-        <!--LAST UPDATED: 10/04/25-->
+        <!--LAST UPDATED: 10/16/25-->
         <link rel="stylesheet" href="styles.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     </head>
 
     <body>
-        <nav class="navbar">
-            <h1 class="logo">
-                <a href="index.html">ඞ</a>
-            </h1>
-            <ul class="nav-list">
-                <li><a href="#index">Home</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <!-- <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#blog">Blog</a></li> -->
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-
-        <main>
-            <section id="index"></section>
-            <h1 class="page-title">Valerie Truong</h1>
-            <p>Software Programmer | VR Development</p>
-            <div class="about">
-                <div class="about-image">
-                    <img src="profilephoto.jpg" alt="Image of my profile photo.">
+        <header class="site-header">
+            <nav class="navbar">
+                <div class="nav-inner">
+                    <a class="logo" href="index.html">ඞ</a>
+                    <ul class="nav-list">
+                        <li><a href="#index">Home</a></li>
+                        <li><a href="#resume">Resume</a></li>
+                        <!-- <li><a href="#portfolio">Portfolio</a></li>-->
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
                 </div>
-                <div class="about-text">
-                    <h5>About Me</h5>
-                    <h2>Let me introduce myself.</h2>
-                    <p>I'm a driven Computer Science major with a passion for technology and innovation. Proficient in software development, data analysis, IT support, digital design, and with additional expertise in administration and team management. Proven ability to excel in fast-paced environments by applying strong analytical and problem-solving skills to deliver high-quality results. I'm always actively seeking opportunities to further enhance technical expertise and contribute to innovative, collaborative projects with meaningful advancements so please contact me if you believe I'm a good fit via vtruon28@calpoly.edu.</p>
-                    <!--<p>I'm a passionte Computer Science student 
-                        My primary interests have been 
-                    I'm always open to new opportunities so if you think I'm a good fit, please contact me via okitawashere@gmail.com.</p>
-                    -->
-                    
+            </nav>
+
+            <div class="about">
+                <div class="about-inner">
+                    <div class="page-title">
+                        <h1 class="name">Valerie Truong</h1>
+                        <p class="title">Software Programmer | VR Development</p>
+                    </div>
+
+                    <div class="about-image">
+                        <img src="profilephoto.jpg" alt="Profile photo">
+                    </div>
+
+                    <div class="about-text">
+                        <h5>About Me</h5>
+                        <h2>Let me introduce myself.</h2>
+                        <p>I'm a driven Computer Science major with a passion for technology and innovation. Proficient in software development, data analysis, IT support, digital design, and with additional expertise in administration and team management. Proven ability to excel in fast-paced environments by applying strong analytical and problem-solving skills to deliver high-quality results. I'm always actively seeking opportunities to further enhance technical expertise and contribute to innovative, collaborative projects with meaningful advancements so please contact me if you believe I'm a good fit via vtruon28@calpoly.edu.</p>
+                        <!--<p>I'm a passionte Computer Science student 
+                            My primary interests have been 
+                        I'm always open to new opportunities so if you think I'm a good fit, please contact me via okitawashere@gmail.com.</p>
+                        -->
+                    </div>
                 </div>
             </div>
+        </header>
 
+        <main>
             <section id="resume">
                 <h5>Resume</h5>
                 <h2>Here are my work experiences and education.</h2>
@@ -134,13 +141,17 @@
                         
                 </section>
 
-                <a href="Valerie Truong Technical Resume.pdf" download>[ Download Resume ]</a>
+                <a class="download-resume" href="Valerie Truong Technical Resume.pdf" download>Download Resume</a>
 
             </section>
 
-            <section>
+            <section id="blog">
+                <h5>Blogs</h5>
+                <h2>What I've been up to.</h2>
                 <!-- the section where new blog entries are injected dynamically -->
-                <div id="blog-container"></div>
+                <div id="blog-container">
+                    <div id="blog-container" class="blog-grid"></div>
+                </div>
             </section>
 
             <!-- <section id="project">
