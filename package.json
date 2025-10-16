@@ -1,0 +1,23 @@
+{
+  "name": "okitawashere.github.io",
+  "version": "1.0.0",
+  "description": "// readme.md -> md stands for markdown file whch allows us to write formatted text",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OkitaWasHere/okitawashere.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OkitaWasHere/okitawashere.github.io/issues"
+  },
+  "homepage": "https://github.com/OkitaWasHere/okitawashere.github.io#readme",
+  "dependencies": {
+    "typescript": "^5.9.3"
+  }
+}

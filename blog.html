@@ -3,8 +3,8 @@
     <head>
         <title>
             Valerie's Blog
-            <link rel="stylesheet" href="styles.css"/>
         </title>
+        <link rel="stylesheet" href="styles.css"/>
     </head>
 
     <body>
@@ -22,11 +22,13 @@
         </nav>
 
         <main>
-            <h1 class=":blog-title"></h1>
-            <section>
-                insert yap.
-            </section>
+            <!-- the section where new blog entries are injected dynamically -->
+            <div id="blog-container"></div>
         </main>
+
+        <!-- imports the compiled JS file -->
+        <script src = "blog.js"></script>
+
         <footer class="footer">© 2025 <Valerie's Personal Website> | All Rights Reserved</footer>
     </body>
 </html>
