@@ -59,7 +59,7 @@ Blogs.forEach((blog) => {
 
     // this wraps the blog in a clickable link
     const link = document.createElement("a")
-    link.href = `blogs/${blog.slug}.html`;
+    link.href = `blogs/blog.html?slug=${blog.slug}`;
     link.appendChild(image);
     link.appendChild(title);
     link.appendChild(desc);
